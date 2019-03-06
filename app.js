@@ -3,6 +3,7 @@ var app = express();
 var serv = require('http').Server(app);
 var colors = require('colors/safe');
 var middleware = require('socketio-wildcard')();
+var exports = module.exports={};
 
 var debug = typeof v8debug === 'object' || /--debug/.test(process.execArgv.join(' '));
 
@@ -17,7 +18,7 @@ var MAX_SOCKET_ACTIVITY_PER_SECOND = 1000;
 var fps = 30;
 //-------------------------------------
 
-var port = process.env.PORT || 80;
+var port = process.env.PORT || 8000;
 if(process.env.PORT == undefined) {
 	console.log(colors.blue("[jsShooter] No port defined using default (80)"));
 }
@@ -39,7 +40,7 @@ var POWERUP_LIST = {};
 
 // ---------- Entities ----------
 // Npc shooter object
-var NPCShooter = function(id, x, y) {
+exports.NPCShooter = function(id, x, y) {
 	var self = {
 		id:id,
 		x:x,
@@ -111,7 +112,7 @@ var NPCShooter = function(id, x, y) {
 }
 
 // NPC attacker object
-var NPCAttacker = function(id, x, y) {
+exports.NPCAttacker = function(id, x, y) {
 	var self = {
 		id:id,
 		x:x,
@@ -181,7 +182,7 @@ var NPCAttacker = function(id, x, y) {
 }
 
 // Bullet object
-var Bullet = function(id, ownerID, x, y, angle, size) {
+exports.Bullet = function(id, ownerID, x, y, angle, size) {
 	var self = {
 		size:size,
 		id:id,
@@ -303,7 +304,7 @@ var NPCBlock = function(id) {
 }
 
 // Player object
-var Player = function(id) {
+exports.Player = function(id) {
 	var self = {
 		x:Math.floor(Math.random() * 1160) + 20,
 		y:Math.floor(Math.random() * 560) + 20,
