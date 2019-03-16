@@ -3,7 +3,7 @@ var app = express();
 var serv = require('http').Server(app);
 var colors = require('colors/safe');
 var middleware = require('socketio-wildcard')();
-var exports = module.exports={};
+var exports = module.exports={getDistance: getDistance};
 
 var debug = typeof v8debug === 'object' || /--debug/.test(process.execArgv.join(' '));
 

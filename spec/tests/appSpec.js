@@ -60,6 +60,15 @@ describe("NPC Attacker", ()=>{
     });
 });
 
+describe("getdistance", ()=>{
+    
+   var a = app.getDistance(1,0,1,0);
+
+    it("should initialize with", function() {
+        expect(a).toEqual(0);
+    });
+});
+
 
 
 describe("Bullet", ()=>{
