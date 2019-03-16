@@ -82,6 +82,10 @@ function changeName() {
 	}
 }
 
+setTimeout(function() {
+	$("#instructions").fadeOut().empty();
+}, 10000);
+
 $("#setName").click(function() {
 	changeName();
 });

@@ -136,6 +136,18 @@ html {
 	white-space: nowrap;
 }
 
+#instructions {
+	font-size: 15px;
+	color: blue;
+	border: 2px solid black;
+	font-family: sans-serif;
+	background-color: white;
+	display: inline-block;
+	padding-right: 40px;
+	margin-top: 40px;
+	margin-left: 650px;
+}
+
 .shadow {
 	transition: 1s;
 }
